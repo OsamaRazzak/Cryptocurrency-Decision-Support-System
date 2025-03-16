@@ -1,6 +1,7 @@
 import plotly.express as px
 import seaborn as sns
 import matplotlib.pyplot as plt
+import plotly.graph_objects as go
 import streamlit as st
 
 def plot_clusters(cluster_df):
@@ -15,9 +16,6 @@ def plot_correlation_heatmap(correlation_matrix):
     sns.heatmap(correlation_matrix, annot=True, fmt=".2f", cmap="coolwarm", linewidths=0.5, ax=ax)
     st.pyplot(fig)
 
-
-import plotly.graph_objects as go
-import streamlit as st
 
 def plot_closing_price(raw_data, crypto_choice):
     """
