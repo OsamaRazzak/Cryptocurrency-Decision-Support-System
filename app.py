@@ -17,7 +17,6 @@ warnings.simplefilter("ignore")
 logging.basicConfig(
     level=logging.INFO, 
     format="%(asctime)s - %(levelname)s - %(message)s",
-    handlers=[logging.FileHandler("crypto_pipeline.log"), logging.StreamHandler()]
 )
 tickers = ["BTC-USD", "ETH-USD", "BNB-USD", "XRP-USD", "ADA-USD",
           "SOL-USD", "DOGE-USD", "DOT-USD", "MATIC-USD", "AVAX-USD",

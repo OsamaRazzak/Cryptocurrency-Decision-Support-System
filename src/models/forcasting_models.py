@@ -18,8 +18,8 @@ def arima_forecast(raw_data, crypto_choice, select_time):
         
         model = ARIMA(train_crypto_data, order=(30,0,0))
         model_fit = model.fit()
-        
         arima_prediction = model_fit.forecast(steps=select_time)
+
         last_date = crypto_df['Date'].iloc[-1]  
         future_dates = pd.date_range(start=last_date + pd.Timedelta(days=1), periods=select_time)
 
@@ -41,7 +41,6 @@ def prophet_forecast(raw_data, crypto_choice, select_time):
         
         prophet_model = Prophet()
         prophet_model.fit(prophet_crypto_data)
-
         future = prophet_model.make_future_dataframe(periods=select_time)         
         prophet_forecast = prophet_model.predict(future)
 
